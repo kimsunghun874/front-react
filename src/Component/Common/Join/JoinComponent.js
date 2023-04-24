@@ -19,7 +19,7 @@ function JoinComponent() {
     const [hp, setHp] = useState("");
     const [birth, setBirth] = useState("");
     const [address, setAddress] = useState("");
-
+    
 
 
     const [userIdError, setUserIdError] = useState(false);
@@ -66,8 +66,8 @@ function JoinComponent() {
       
       setBirth(e.target.value);
      
-  };
-
+    };
+  
     const onChangeHp = (e) => {
       
       setHp(e.target.value);
@@ -94,9 +94,9 @@ function JoinComponent() {
       
    // if(validation()) return;
      
-    e.preventDefault();
-
-    let member = {
+        e.preventDefault();
+    
+        let member = {
           id: id,
           pwd: pwd,
           name: name,
@@ -105,13 +105,13 @@ function JoinComponent() {
           email:email,
           address:address,
     
-    };
+        };
     
 
-    ApiService.signOn(member)
-      .then((res) => {
+        ApiService.signOn(member)
+         .then((res) => {
           console.log(id+ "님이 성공적으로 등록되었습니다.");
-       
+        
           // {
           //   res.data === ""
           //   ?  window.location.href="/"
@@ -140,8 +140,8 @@ function JoinComponent() {
           // })
           // .catch((err) => {
           //   console.log("addMember() 에러!!", err);
-      });
-
+          });
+      
 
     }
 
@@ -152,7 +152,7 @@ function JoinComponent() {
 
     }
     return (
-      <div className="join">
+        <div className="join">
           <h1 style={style}>회원 가입</h1>
           <span className="text">Have an account? <Link to="/" className="link">Sign In</Link></span>
             
@@ -175,7 +175,7 @@ function JoinComponent() {
 
                         </Col>
                     </Form.Group>
-          </div>
+                    </div>
 
                     <div className="join_text_area">
                     <Form.Group as={Row} className="mb-3">
@@ -190,7 +190,7 @@ function JoinComponent() {
                        
                         </Col>
                     </Form.Group>
-          </div>
+                    </div>
 
                     <div className="join_text_area">
                     <Form.Group as={Row} className="mb-3">
@@ -229,8 +229,8 @@ function JoinComponent() {
                             <Form.Control maxLength={50} type="input"
                             placeholder="Email Address"
                             value={email}
-              id="email"
-              name="email"
+                            id="email"
+                            name="email"
                             className="join_text_input"
                             onChange={onChangeEmail} />
                           
@@ -248,11 +248,11 @@ function JoinComponent() {
                             name="birth"
                             className="join_text_input"
                             onChange={onChangeDate} 
-            />
+                            />
                            {/* {emailError && <div class="invalid-input">Please enter valid email format.</div>} */}
                         </Col>
                     </Form.Group>
-          </div>
+                    </div>
 
 
 
@@ -292,8 +292,8 @@ function JoinComponent() {
                     <br />
                     <div>
                     <button onClick={onSubmit} className="join_btn">
-            Sign On
-          </button>
+                      Sign On
+                    </button>
                         
                         {/* <Button variant="secondary" onClick={onSubmit}>
                             Sign Up
@@ -322,8 +322,8 @@ function JoinComponent() {
                 {/* </Container> */}
              
             
-      </div>
+        </div>
     );
-  }
+}
 
 export default JoinComponent

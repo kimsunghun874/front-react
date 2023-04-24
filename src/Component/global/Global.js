@@ -123,7 +123,7 @@ const items = [
 
   // 추가 & 변경하여 본인담당 업무
   session === "1"
-    ? { text: "인사관리", icon: <ManageAccountsIcon />, link: "/employee" } // 세션 1
+    ? { text: "인사관리", icon: <ManageAccountsIcon />, link: "#" } // 세션 1
     : session === "2"
     ? { text: "경영관리", icon: <ManageAccountsIcon />, link: "/salary" } // 세션 2
     : null,
@@ -174,7 +174,7 @@ export default function Global() {
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton 
+            <IconButton
               size="large"
               aria-label="show new notifications"
               color="inherit"
