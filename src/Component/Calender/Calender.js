@@ -16,7 +16,7 @@ const customStyles = {
     borderRadius: "10px",
     padding: "20px",
     backgroundColor: "#f2f2f2",
-  },
+    },
 };
 
 function CalenderTest() {
@@ -26,7 +26,7 @@ function CalenderTest() {
   const [eventStart, setEventStart] = useState(null);
   const [eventEnd, setEventEnd] = useState(null);
   const [modalPosition, setModalPosition] = useState({ x: 0, y: 0 });
-
+  
   const handleDateSelect = (arg) => {
     setEventStart(arg.start);
     setEventEnd(arg.end);
@@ -35,7 +35,7 @@ function CalenderTest() {
     setModalPosition({ x: mousePosX, y: mousePosY });
     setModalIsOpen(true);
   };
-
+  
   const handleModalClose = () => {
     setEventTitle("");
     setEventDetail("");
@@ -43,23 +43,23 @@ function CalenderTest() {
     setEventEnd(null);
     setModalIsOpen(false);
   };
-
+  
   const handleModalSubmit = () => {
     const calendarApi = calendarRef.current.getApi();
-
+  
     calendarApi.addEvent({
       title: eventTitle,
       detail: eventDetail,
       start: eventStart,
       end: eventEnd,
     });
-
+  
     handleModalClose();
   };
-
+  
   const handleEventTitleChange = (event) => {
     setEventTitle(event.target.value);
-  };
+    };
   const handleEventDetailChange = (event) => {
     setEventDetail(event.target.value);
   };
@@ -70,16 +70,16 @@ function CalenderTest() {
     <Box display={"flex"}>
       <Box width={90}>.</Box>
       <Box width={"100%"} mr={2} mb={2}>
-        <FullCalendar
+      <FullCalendar
           ref={calendarRef}
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          initialView="dayGridMonth"
-          headerToolbar={{
-            start: "today prev,next",
-            center: "title",
-            end: "dayGridMonth,timeGridWeek,timeGridDay",
-          }}
-          selectable={true}
+        plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+        initialView="dayGridMonth"
+        headerToolbar={{
+          start: "today prev,next",
+          center: "title",
+          end: "dayGridMonth,timeGridWeek,timeGridDay",
+        }}
+        selectable={true}
           select={handleDateSelect}
           events={[
             {
@@ -100,7 +100,7 @@ function CalenderTest() {
               backgroundColor: "#f2f2f2",
               borderRadius: "10px",
               padding: "20px",
-            }}
+        }}
           >
             <h2>일정추가</h2>
             <p>
@@ -115,7 +115,7 @@ function CalenderTest() {
                     type="text"
                     value={eventTitle}
                     onChange={handleEventTitleChange}
-                  />
+      />
                 </label>
               </div>
               <div>
@@ -127,7 +127,7 @@ function CalenderTest() {
                     onChange={handleEventDetailChange}
                   />
                 </label>
-              </div>
+    </div>
             </form>
             <br />
             <button onClick={handleModalSubmit}>저장</button>
