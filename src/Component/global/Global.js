@@ -174,7 +174,7 @@ export default function Global() {
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
+            <IconButton 
               size="large"
               aria-label="show new notifications"
               color="inherit"
