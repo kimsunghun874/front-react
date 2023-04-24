@@ -108,7 +108,7 @@ const Drawer = styled(MuiDrawer, {
 //이 경로를 타게됨.
 //session == 를 숫자를 넣으면 아이콘이 보임.
 //if(session == "2"){   //인사관리 아이콘 보기.
-const session = "2";
+const session = "1";
 
 const items = [
   { text: "홈", icon: <HomeIcon />, link: "/main" },
