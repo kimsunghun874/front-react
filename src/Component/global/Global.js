@@ -108,7 +108,7 @@ const Drawer = styled(MuiDrawer, {
 //이 경로를 타게됨.
 //session == 를 숫자를 넣으면 아이콘이 보임.
 //if(session == "2"){   //인사관리 아이콘 보기.
-const session = "2";
+const session = "1";
 
 const items = [
   { text: "홈", icon: <HomeIcon />, link: "/main" },
@@ -121,11 +121,10 @@ const items = [
   { text: "게시판", icon: <FormatListBulletedIcon />, link: "#" },
   { text: "메신저", icon: <ChatIcon />, link: "#" }, // 부석현 - 메신저
   { text: "회의실 예약", icon: <AccessTimeIcon />, link: "#" },
-  { text: "회의실 예약", icon: <AccessTimeIcon />, link: "/documentList" },
 
   // 추가 & 변경하여 본인담당 업무
   session === "1"
-    ? { text: "인사관리", icon: <ManageAccountsIcon />, link: "#" } // 세션 1
+    ? { text: "인사관리", icon: <ManageAccountsIcon />, link: "/employee" } // 세션 1
     : session === "2"
     ? { text: "경영관리", icon: <ManageAccountsIcon />, link: "/salary" } // 세션 2
     : null,
@@ -137,10 +136,6 @@ export default function Global() {
 
   // 링크 이동
   const history = useHistory();
-
-  const jong = () => {
-    history.push("/documentList");
-  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -180,8 +175,7 @@ export default function Global() {
           </IconButton>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton 
-               onClick={jong}
+            <IconButton
               size="large"
               aria-label="show new notifications"
               color="inherit"

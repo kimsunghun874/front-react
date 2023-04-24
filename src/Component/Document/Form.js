@@ -11,8 +11,7 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit}>
       <EditorComponent value={content} onChange={setContent} />
-      <button type="submit">보내기</button>
-      <button type="submit"> 취소</button>
+      <button type="submit">작성 완료</button>
     </form>
   );
 };

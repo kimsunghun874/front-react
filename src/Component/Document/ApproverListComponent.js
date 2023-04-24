@@ -1,79 +1,73 @@
-import React, { useState } from 'react';
-import { Box,  Tabs,TextField,Button } from '@mui/material';
-import { DataGrid } from '@mui/x-data-grid';
+import React, { Component } from 'react';
+import '../../css/DocumentComponent.css';
 
-export default function ColorTabs() {
-  const [value, setValue] = useState('one');
-  const [] = useState(false);
-  const [searchText, setSearchText] = useState('');
+class ApproverListComponent extends Component {
+  constructor(props) {
+    super(props);
 
-  const handleChange = (newValue) => {
-    setValue(newValue);
-  };
-
-  const handleSearchChange = (event) => {
-    setSearchText(event.target.value);
+    this.state = {
+      approvers: [
+        { id: 1, name: '김영희', department: '인사팀', position: '부장' },
+        { id: 2, name: '이철수', department: '영업팀', position: '과장' },
+        { id: 3, name: '박지영', department: '마케팅팀', position: '차장' },
+        // Add more approvers as needed
+      ],
+      selectedApprovers: [],
+    };
   }
 
-  const columns = [
-    { field: '사번', headerName: '사번', width: 70 },
-    { field: '이름', headerName: '이름', width: 90 },
-    { field: '부서', headerName: '부서', width: 90 },
-    { field: '직급', headerName: '직급', width: 90 },
-  ];
+  handleApproverClick = (approver) => {
+    const { selectedApprovers } = this.state;
+    const approverIndex = selectedApprovers.findIndex((selectedApprover) => selectedApprover.id === approver.id);
+  
+    let newSelectedApprovers;
+    if (approverIndex !== -1) {
+      // Remove approver from selectedApprovers if already selected
+      newSelectedApprovers = selectedApprovers.filter((selectedApprover) => selectedApprover.id !== approver.id);
+    } else {
+      // Add approver to selectedApprovers if not already selected
+      newSelectedApprovers = [...selectedApprovers, approver];
+    }
+  
+    this.setState({ selectedApprovers: newSelectedApprovers });
+  };
 
-  const rows = [
-    { id: 1, 사번: 1, 이름: '정짜이', 부서: '임원', 직급: '사장'},
-    { id: 2, 사번: 2, 이름: '조우주', 부서: '경영', 직급: '대리'},
-    { id: 3, 사번: 3, 이름: '사원11', 부서: '기획', 직급: '팀장'},
-    { id: 4, 사번: 4, 이름: '사원2', 부서: '개발', 직급: '사원'},
-  ];
+  handleConfirmClick = () => {
+    const { selectedApprovers } = this.state;
+  
+    // Send selected approvers back to the parent component
+    if (typeof this.props.onApproversSelected === 'function') {
+      this.props.onApproversSelected(selectedApprovers);
+    }
+  
+    // Close the current window
+    window.close();
+  };
 
-  const filteredRows = rows.filter((row) => {
-    const regex = new RegExp(searchText, 'i');
-    return regex.test(row.이름) || regex.test(row.부서) || regex.test(row.직급);
-  });
+  render() {
+    const { approvers, selectedApprovers } = this.state;
 
-  return (
-    <Box sx={{ width: '100%' }}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        textColor="secondary"
-        indicatorColor="secondary"
-        aria-label="secondary tabs example"
-      >
-        
-      </Tabs>
-      {value === 'one' && (
-        <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
-          
-          <h2>  </h2>
-
-          {/* 검색 필터 추가 */}
-          <TextField
-            id="outlined-basic"
-            label="검색"
-            variant="outlined"
-            sx={{ width: '20ch', mb: 2 }}
-            value={searchText}
-            onChange={handleSearchChange}
-          />
-
-          <div style={{ height: 400, width: '100%' }}>
-            <DataGrid
-              rows={filteredRows}
-              columns={columns}
-              pageSize={5}
-              rowsPerPageOptions={[5]}
-              checkboxSelection
-              disableSelectionOnClick
-            />
-          </div>
-          <br></br>
-          <Button variant="outlined" color="primary">등록</Button>
-        </Box>
-      )}
-    </Box>
-  );
+    return (
+      <div className="approver-selection">
+        <h2>결재자 목록</h2>
+        <ul>
+          {approvers.map((approver) => (
+            <li key={approver.id} className={selectedApprovers.includes(approver) ? 'selected' : ''}>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={selectedApprovers.includes(approver)}
+                  onChange={() => this.handleApproverClick(approver)}
+                />
+                {approver.name} - {approver.department} - {approver.position}
+              </label>
+            </li>
+          ))}
+        </ul>
+        <button onClick={this.handleConfirmClick}>확인</button>
+      </div>
+    );
+  }
 }
+
+export default ApproverListComponent;
