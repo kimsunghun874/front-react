@@ -13,13 +13,13 @@ class ApproverListComponent extends Component {
         // Add more approvers as needed
       ],
       selectedApprovers: [],
-    };
+  };
   }
 
   handleApproverClick = (approver) => {
     const { selectedApprovers } = this.state;
     const approverIndex = selectedApprovers.findIndex((selectedApprover) => selectedApprover.id === approver.id);
-  
+
     let newSelectedApprovers;
     if (approverIndex !== -1) {
       // Remove approver from selectedApprovers if already selected
@@ -28,18 +28,18 @@ class ApproverListComponent extends Component {
       // Add approver to selectedApprovers if not already selected
       newSelectedApprovers = [...selectedApprovers, approver];
     }
-  
+
     this.setState({ selectedApprovers: newSelectedApprovers });
   };
 
   handleConfirmClick = () => {
     const { selectedApprovers } = this.state;
-  
+        
     // Send selected approvers back to the parent component
     if (typeof this.props.onApproversSelected === 'function') {
       this.props.onApproversSelected(selectedApprovers);
     }
-  
+          
     // Close the current window
     window.close();
   };
@@ -58,7 +58,7 @@ class ApproverListComponent extends Component {
                   type="checkbox"
                   checked={selectedApprovers.includes(approver)}
                   onChange={() => this.handleApproverClick(approver)}
-                />
+            />
                 {approver.name} - {approver.department} - {approver.position}
               </label>
             </li>
@@ -66,7 +66,7 @@ class ApproverListComponent extends Component {
         </ul>
         <button onClick={this.handleConfirmClick}>확인</button>
       </div>
-    );
+  );
   }
 }
 

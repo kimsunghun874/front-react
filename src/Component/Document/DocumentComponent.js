@@ -127,44 +127,44 @@ class DocumentComponent extends Component {
           <tbody>
             <tr className="tr-1">
               <td rowSpan="3" className="col-1">
-                신청
+              신청
                 <button
                   className="add-button"
                   onClick={this.handleAddButtonClick}
                 >
                   +
                 </button>
-              </td>
+          </td>
               <td className="col-2"></td>
               <td className="col-3"></td>
               <td className="col-4"></td>
-              <td className="col-5"></td>
-            </tr>
-            <tr className="tr-2">
+          <td className="col-5"></td>
+        </tr>
+        <tr className="tr-2">
               <td className="col-2"></td>
               <td className="col-3"></td>
               <td className="col-4"></td>
-              <td className="col-5"></td>
-            </tr>
-            <tr className="tr-3">
+          <td className="col-5"></td>
+        </tr>
+        <tr className="tr-3">
               <td className="col-2"></td>
               <td className="col-3"></td>
               <td className="col-4"></td>
-              <td className="col-5"></td>
-            </tr>
-            <tr className="tr-4">
-              <td className="col-1">참조</td>
-              <td colspan="4" className="col-2">
-                <input type="file" onChange={this.handleFileUpload} />
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <td className="col-5"></td>
+        </tr>
+        <tr className="tr-4">
+          <td className="col-1">참조</td>
+          <td colspan="4" className="col-2">
+          <input type="file" onChange={this.handleFileUpload} />
+          </td>
+        </tr>
+      </tbody>
+    </table>
         <br />
-        <h1>상세 입력</h1>
+    <h1>상세 입력</h1>
         <Form />
-      </div>
-    );
+    </div>
+   );
   }
 }
 
