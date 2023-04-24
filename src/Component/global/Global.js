@@ -123,7 +123,7 @@ const items = [
 
   // 추가 & 변경하여 본인담당 업무
   session === "1"
-    ? { text: "인사관리", icon: <ManageAccountsIcon />, link: "#" } // 세션 1
+    ? { text: "인사관리", icon: <ManageAccountsIcon />, link: "/employee" } // 세션 1
     : session === "2"
     ? { text: "경영관리", icon: <ManageAccountsIcon />, link: "/salary" } // 세션 2
     : null,

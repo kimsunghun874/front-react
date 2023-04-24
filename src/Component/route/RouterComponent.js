@@ -10,29 +10,37 @@ import Main from "../Layout/Main";
 import Document from "../Layout/Document";
 import Salary from "../Layout/Salary";
 import Calender from "../Layout/Calender";
-import Mail from "../Layout/Mail";
-import Content from "../Messenger/Content";
+import ApproverListComponent from "../Document/ApproverListComponent";
+import DocumentList from "../Layout/DocumentList";
+import Employee from "../Layout/Employee";
+import DepartView from "../Layout/DepartView";
+
 // 여기 부터 붙이면 됨 규격 꼭 지킬것.
 // 예시 import ~ from "../Layout/~";
 
-
 const AppRouter = () => {
   return (
-
     <div>
-
       <BrowserRouter>
         <div>
           <Route path="/" exact={true} component={LoginComponent} />
           <Route path="/join" exact={true} component={JoinComponent} />
           <Route path="/main" exact={true} component={Main} />
           <Route path="/document" exact={true} component={Document} />
+          <Route path="/ApproverListComponent" exact={true} component={ApproverListComponent} />
           <Route path="/salary" exact={true} component={Salary} />
           <Route path="/calender" exact={true} component={Calender} />
-          <Route path="/mail" exact={true} component={Mail} />
+
+
+          <Route path="/documentList" exact={true} component={DocumentList} />
+
           {/* 여기부터 붙이면 됨 규격 꼭 지킬것 */}
           {/* 예시  <Route path="/~" exact={true} component={~} />*/}
-          <Route path="/message" exact={true} component={Content} />
+
+          <Route path="/employee" exact={true} component={Employee} />
+          <Route path="/employee/department" exact={true} component={DepartView} />
+
+
 
 
         </div>
