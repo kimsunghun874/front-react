@@ -6,7 +6,8 @@ import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import LoginComponent from "./../Common/Login/LoginComponent";
 import JoinComponent from "./../Common/Join/JoinComponent";
-
+import ApproverListComponent from "../Document/ApproverListComponent";
+import DocumentListComponent from "../Document/DocumentListComponent";
 import App2 from "../../App2";
 
 //여길 먼저 탄다
@@ -19,7 +20,10 @@ const TestRouter = () => {
           <Route path="/join" exact={true} component={JoinComponent} />
           <Route path="/" exact={true} component={LoginComponent} />
           <Route path="/test" exact={true} component={App2} />
-          <Route path="/employee" exact={true} component={App2} />
+          <Route path="/documenttest" exact={true} component={App2} />
+          <Route path="/documentList" exact={true} component={App2} />
+          <Route path="/ApproverListComponent" exact={true} component={ApproverListComponent} />
+          
         </div>
       </BrowserRouter>
     </div>
