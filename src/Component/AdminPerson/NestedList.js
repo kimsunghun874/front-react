@@ -65,7 +65,7 @@ export default function NestedList() {
           </ListItemButton>
 
           <ListItemButton onClick={handleClick}>
-            <ListItemText primary="부서관리" />
+            <ListItemText primary="부서" />
         {open ? <ExpandLess /> : <ExpandMore />}
         </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
@@ -81,7 +81,7 @@ export default function NestedList() {
       </Collapse>
 
           <ListItemButton>
-            <ListItemText primary="직급관리" />
+            <ListItemText primary="직급" />
           </ListItemButton>
           <Divider orientation="vertical" flexItem />
         </List>

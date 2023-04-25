@@ -81,8 +81,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 // 컬럼에 맞춰서 나중에 수정이 필요(.23-04-24)
-function createData(id, name, birth, address, deptid, postitionid, hiredate, role) {
-  return { id, name, birth, address, deptid, postitionid, hiredate, role };
+function createData(id, name, birth, address, deptname, postitionid, hiredate, role) {
+  return { id, name, birth, address, deptname, postitionid, hiredate, role };
 }
 
 // 사원의 정보 데이터를 붙이는곳(.23-04-24)
@@ -147,7 +147,7 @@ export default function CustomizedTables() {
               <StyledTableCell align="right">{row.name}</StyledTableCell>
               <StyledTableCell align="right">{row.birth}</StyledTableCell>
               <StyledTableCell align="right">{row.address}</StyledTableCell>
-              <StyledTableCell align="right">{row.deptid}</StyledTableCell>
+              <StyledTableCell align="right">{row.deptname}</StyledTableCell>
               <StyledTableCell align="right">{row.postitionid}</StyledTableCell>
               <StyledTableCell align="right">{row.hiredate}</StyledTableCell>
               <StyledTableCell align="right">{row.role}</StyledTableCell>
