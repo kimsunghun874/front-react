@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Global from "../global/Global";
-import DocumentListComponent from "../Document/DocumentListComponent";
 import { Box } from '@mui/material';
 import NestedList from "../Document/NestedList/NestedList";
+import DocumentWriteComponent from "../Document/DocumentWriteComponent";
 
-class documentList extends Component {
+class documentWrite extends Component {
   render() {
     return (
       <div>
@@ -19,11 +19,11 @@ class documentList extends Component {
             color: 'text.primary',
             padding: '1rem',
           }}>
-          <DocumentListComponent />
+          <DocumentWriteComponent />
         </Box>
       </Box>
       </div>
     );
   }
 }
-export default documentList;
+export default documentWrite;

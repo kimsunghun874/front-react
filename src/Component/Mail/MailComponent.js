@@ -56,7 +56,7 @@ class MailComponent extends Component {
  </div>
 
 
-      <Box width={90}>.</Box>
+      <Box width={90}></Box>
         <Box width={"100%"} mr={2} mb={2}>
         <div className="mail_list">
         <Typography
