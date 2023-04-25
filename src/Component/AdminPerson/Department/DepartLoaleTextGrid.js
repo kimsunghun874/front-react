@@ -26,11 +26,11 @@ function createData(name, calories, fat, carbs, protein, price) {
       {
         name: '경영지원팀',
         namber: '7',
-      },
+  },
       {
         name: '영업팀',
         namber: '13',
-      },
+  },
     ],
   };
 }
@@ -140,8 +140,8 @@ export default function CollapsibleTable() {
         <TableBody>
           {rows.map((row) => (
             <Row key={row.name} row={row} />
-          ))}
-        </TableBody>
+  ))}
+  </TableBody>
       </Table>
     </TableContainer>
   );
