@@ -3,7 +3,7 @@ import ApiService from "../../../ApiService";
 import "./login.css";
 import { Box, Grid } from "@mui/material";
 import { Button } from "bootstrap";
-
+import GoogleLoginButton from "./GoogleLogin";
 class LoginComponent extends Component {
   constructor(props) {
     super(props);
@@ -52,6 +52,11 @@ class LoginComponent extends Component {
   };
 
   render() {
+
+    const style={
+      width: 300,
+      height: 30
+    }
     return (
       <div className="Login">
         <h4><img src="img/logo.png" alt="logo"/></h4>
@@ -78,15 +83,24 @@ class LoginComponent extends Component {
               placeholder='비밀번호를 입력하세요'
             />
           </div>
-
-          <button onClick={this.login} className="btn">
+          <div>
+          <Box>
+          <button onClick={this.login} className="login_btn">
             로그인
           </button>
-          <button onClick={this.signOn} className="btn">
+
+          </Box>
+          <Box>
+          < GoogleLoginButton/>
+          </Box>
+          <Box>
+          <button onClick={this.signOn} className="login_btn">
             회원가입
           </button>
 
-          <div> 
+          </Box>
+
+
           <Box className="loginBox">
           공지사항
             <Box className="loginBoard" border="1px solid #f2f2f2" justifyContent="center" height="100px">

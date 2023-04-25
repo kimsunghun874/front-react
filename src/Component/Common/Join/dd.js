@@ -8,12 +8,8 @@ import { Box } from "@mui/material";
 
 
 class JoinComponent extends Component {
- 
 
   constructor(props) {
-
-    
-
     super(props);
     this.state = {
       id: "",
@@ -23,27 +19,17 @@ class JoinComponent extends Component {
       brith:"",
       email: "",
       address:"",
-      
-     
-      
      
       message: null,
       
     };
-
-    
-  
   }
-
 
   onChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
-
-
-
 
   signOn = (e) => {
   
@@ -60,7 +46,6 @@ class JoinComponent extends Component {
 
     };
 
-
     ApiService.signOn(member)
       .then((res) => {
         this.setState({
@@ -74,9 +59,6 @@ class JoinComponent extends Component {
         console.log("addMember() 에러!!", err);
       });
   };
-
-  
-
   onChangeUserId = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -86,10 +68,6 @@ class JoinComponent extends Component {
 
     const userIdRegex = /^[A-Za-z0-9+]{5,}$/;
     if ((e.target.value || (userIdRegex.test(e.target.value)))){
-     
-      
-        
-      
          
     //  this.state.idChk = true;
     }

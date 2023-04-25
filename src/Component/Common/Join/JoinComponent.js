@@ -86,13 +86,13 @@ function JoinComponent() {
         if(!name) setUserNameError(true);
         if(!email) setEmailError(true);
 
-        if(id && pwd && confirmPassword && name && email) return true;
+        if(id && pwd && confirmPassword && name && email && hp && birth && address )  return true;
         else return false;
     }
 
     const onSubmit = (e) => {
       
-   // if(validation()) return;
+  // if(validation()) return;
      
     e.preventDefault();
 
