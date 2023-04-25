@@ -101,15 +101,15 @@ class LoginComponent extends Component {
           </Box>
 
 
-          <Box className="loginBox">
+          {/* <Box className="loginBox">
           공지사항
             <Box className="loginBoard" border="1px solid #f2f2f2" justifyContent="center" height="100px">
-                {/* 공지사항에 대한 데이터를 출력 */}
+           
                 <h6>*[공지] 5/17(수) 프로젝트 전부 끝내야함.</h6>
                 <h6>*[공지] 4/26(수) 프로젝트 화면 50퍼 끝내기.</h6>
     
             </Box>
-          </Box>
+          </Box> */}
           </div>
         </form>
       </div>
