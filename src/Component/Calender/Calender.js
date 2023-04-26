@@ -85,7 +85,7 @@ function CalenderTest() {
             {
               title: "eventh",
               date: "2023-04-10",
-              description: "A gathering of frie12312313family",
+              description: "A gathering family",
             },
           ]}
         />
